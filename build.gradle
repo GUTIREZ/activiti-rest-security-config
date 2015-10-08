@@ -13,22 +13,26 @@ buildscript {
 	}
 }
 
-apply plugin: 'java'
-apply plugin: 'spring-boot'
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'spring-boot'
 
-project.sourceCompatibility = JavaVersion.VERSION_1_8
+	project.sourceCompatibility = JavaVersion.VERSION_1_8
 
-repositories {
-	jcenter()
-}
+	repositories {
+		jcenter()
+	}
 
-dependencies {
-	compile 'org.springframework.boot:spring-boot-starter-web'
-	compile 'org.springframework.boot:spring-boot-starter-jdbc'
+	dependencies {
+		compile 'org.springframework.boot:spring-boot-starter-web'
+		compile 'org.springframework.boot:spring-boot-starter-jdbc'
 
-	compile "org.activiti:activiti-spring-boot-starter-rest-api:$activitiVersion"
+		compile "org.activiti:activiti-spring-boot-starter-rest-api:$activitiVersion"
 
-	compile 'com.h2database:h2'
+		compile 'com.h2database:h2'
+
+		testCompile 'org.springframework.boot:spring-boot-starter-test'
+	}
 }
 
 wrapper {
