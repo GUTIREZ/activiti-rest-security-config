@@ -1,5 +1,11 @@
 # Activiti REST - Spring Security Configuration
 
+**UPDATE**:
+This issue was present in Activiti release ```5.18.0``` and was fixed in ```5.22.0```.
+See [ACT-4074](https://activiti.atlassian.net/browse/ACT-4074) and [this PR](https://github.com/Activiti/Activiti/pull/762).
+
+---
+
 This is a minimal project that demonstrates how to configure ```activiti-spring-boot-starter-rest-api``` based application to use ```IdentityServiceUserDetailsService``` backed ```AuthenticationProvider```.
 
 By default, Activiti REST interface is secured by configuration in ```RestApiAutoConfiguration.SecurityConfiguration``` which defines an instance of ```BasicAuthenticationProvider``` as ```AuthenticationProvider```. ```BasicAuthenticationProvider``` returns ```Authentication``` objects populated with a simple username ```String``` as principal and list of ```SimpleGrantedAuthority``` objects as authorities.
